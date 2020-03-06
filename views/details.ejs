@@ -1,0 +1,37 @@
+<%- include("partials/header") %>
+
+<div class="container mb-5">
+	<div class="row m-3">
+		<div class="col-lg-5">
+			<div class="card nb">
+				<img src="<%= data.Poster %>" class="card-img-top">
+			</div>
+		</div>
+		<div class="col-lg-7">
+			<div class="p-3 lsn" style="list-style: none;">
+				<li class="py-1"> <strong>Title : </strong> <%= data.Title %> </li>
+				<li class="py-1"> <strong>Released : </strong> <%= data.Released %> </li>
+				<% data.Ratings.forEach(function(rating){ %>
+					<li class="py-1"> <strong><%= rating.Source %> :</strong> <%= rating.Value %> </li>
+				<% }) %>
+				<li class="py-1"> <strong>Runtime : </strong> <%= data.Runtime %> </li>
+				<li class="py-1"> <strong>Director : </strong> <%= data.Director %> </li>
+				<li class="py-1"> <strong>Writer : </strong> <%= data.Writer %> </li>
+				<li class="py-1"> <strong>Actors : </strong> <%= data.Actors %> </li>
+				<li class="py-1"> <strong>Plot : </strong> <%= data.Plot %> </li>
+				<li class="py-1"> <strong>Language : </strong> <%= data.Language %> </li>
+				<li class="py-1"> <strong>Country : </strong> <%= data.Country %> </li>
+				<li class="py-1"> <strong>Awards : </strong> <%= data.Awards %> </li>
+				<li class="py-1"> <strong>IMDB Votes : </strong> <%= data.imdbVotes %> </li>
+				<li class="py-1"> <strong>Box Office Collection : </strong> <%= data.BoxOffice %> </li>
+				<li class="py-1"> <strong>Production : </strong> <%= data.Production %> </li>
+			</div>
+		</div>
+	</div>
+	<div class="text-center">
+		<a class="btn btn-primary" href="/">Home</a>
+	</div>
+	
+</div>
+
+<%- include("partials/footer") %>
