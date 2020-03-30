@@ -17,31 +17,7 @@ i {
 }
 
 form {
-    width: 30%; 
+    width: 100%;
+    max-width: 300px; 
     margin: auto;
-}
-
-@media(max-width: 1000px) {
-    form {
-        width: 70%;
-    }
-}
-
-.outer {
-    position: relative;
-    height: 45vh;
-}
-
-@media(max-width: 1000px) {
-	.outer {
-		zoom: 150%;
-		height: 30vh;
-	}
-}
-
-.inner {
-    position: relative;
-    top: 30%;
-    transform: translateY(-30%);
-    text-align: center;
 }
