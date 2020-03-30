@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="jumbotron mt-5">
-		<h1>Here are some of the movies matching your keyword</h1>
+		<h4>Here are some of the movies matching your keyword</h4>
 		<a class="btn btn-primary" href="/">Go Back</a>
 	</div>
 
@@ -12,7 +12,7 @@
 				<a href="/results/<%= movie.imdbID %>">
 					<div class="card nb m-3">
 						<img src="<%=movie.Poster%>" class="card-img-top">
-						<div class="card-title text-center mt-2 bl"><strong><%= movie.Title %> (<%=movie.Year%>)</strong></div>
+						<h6 class="card-title text-center mt-2 bl"><%= movie.Title %> (<%=movie.Year%>)</h6>
 					</div>
 				</a>
 			</div>	
