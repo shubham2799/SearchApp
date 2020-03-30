@@ -10,9 +10,9 @@
 		<% data.Search.forEach(function(movie) { %>	
 			<div class="col-6 col-lg-3">
 				<a href="/results/<%= movie.imdbID %>">
-					<div class="card nb m-3">
+					<div class="card nb my-3">
 						<img src="<%=movie.Poster%>" class="card-img-top">
-						<h6 class="card-title text-center mt-2 bl"><%= movie.Title %> (<%=movie.Year%>)</h6>
+						<div class="card-title text-center mt-2 bl"><%= movie.Title %> (<%=movie.Year%>)</div>
 					</div>
 				</a>
 			</div>	
