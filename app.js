@@ -4,11 +4,10 @@ var request = require("request");
 var bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
 app.get("/",function(req,res) {
-	res.render("home");
+	res.render("index");
 })
 
 app.post("/results",function(req,res) {
@@ -17,7 +16,13 @@ app.post("/results",function(req,res) {
 	request(url,function(error,response,body) {
 		if(!error && response.statusCode==200) {
 			var data = JSON.parse(body);
-			res.render("results",{data:data});
+			if(data.Response==="True") {
+				res.render("results",{data:data});
+			} else {
+				res.render("error");
+			}
+		} else {
+			res.render("error");
 		}
 	})
 })
@@ -28,7 +33,13 @@ app.get("/results/:id",function(req,res){
 	request(url,function(error,response,body) {
 		if(!error && response.statusCode==200) {
 			var data = JSON.parse(body);
-			res.render("details",{data:data});
+			if(data.Response==="True") {
+				res.render("details",{data:data});
+			} else {
+				res.render("error");
+			}
+		} else {
+			res.render("error");
 		}
 	})
 });
